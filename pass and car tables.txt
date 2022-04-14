@@ -1,0 +1,75 @@
+CREATE TABLE passenger (
+	passengerID INT NOT NULL,
+	fname VARCHAR(50),
+	lname VARCHAR(50),
+	email VARCHAR(50),
+	drivers_license VARCHAR(50),
+	date_of_birth DATE,
+	location VARCHAR(50),
+    CONSTRAINT psg_pk PRIMARY KEY (passengerID)
+);
+
+
+
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (1, 'Ardeen', 'Dewberry', 'adewberry0@nature.com', 'H1728413752', '2002/09/15', '95425');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (2, 'Tobe', 'Findlater', 'tfindlater1@51.la', 'O1139211966', '1996/04/11', '46492');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (3, 'Smith', 'Bleaden', 'sbleaden2@psu.edu', 'N1941101944', '1998/01/15', '49704');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (4, 'Sadye', 'Hendriks', 'shendriks3@miibeian.gov.cn', 'A1691554702', '2001/02/06', '56137');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (5, 'Bartolomeo', 'Mort', 'bmort4@chicagotribune.com', 'Y1650115709', '2001/11/15', '46058');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (6, 'Hattie', 'Shalliker', 'hshalliker5@globo.com', 'G1876047959', '1997/04/10', '18493');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (7, 'Katrinka', 'Arsmith', 'karsmith6@shutterfly.com', 'W1747674180', '1995/10/21', '39009');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (8, 'Cirilo', 'MacLaig', 'cmaclaig7@tripod.com', 'F1563886738', '1998/04/25', '74931');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (9, 'Geoffry', 'Smaridge', 'gsmaridge8@deliciousdays.com', 'Z1026539307', '2001/08/09', '38800');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (10, 'Marten', 'Edwinson', 'medwinson9@chron.com', 'H1182969311', '1999/02/22', '49982');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (11, 'Catherin', 'Oxterby', 'coxterbya@php.net', 'R1869627950', '2004/11/22', '89258');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (12, 'Antonio', 'Habbergham', 'ahabberghamb@nasa.gov', 'E1395921061', '1991/08/06', '41493');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (13, 'Franky', 'Cowpland', 'fcowplandc@i2i.jp', 'R1774343146', '1998/06/24', '62307');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (14, 'Sadie', 'Guerrieri', 'sguerrierid@china.com.cn', 'M1069316253', '1997/07/20', '22692');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (15, 'Shaun', 'Castaignet', 'scastaignete@vimeo.com', 'P1075577669', '1997/10/07', '22642');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (16, 'Shawna', 'Stephens', 'sstephensf@twitpic.com', 'J1412249729', '1995/06/10', '10604');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (17, 'Reggis', 'Beuscher', 'rbeuscherg@examiner.com', 'G1813944863', '1994/07/15', '74377');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (18, 'Phelia', 'Lared', 'plaredh@sina.com.cn', 'G1630428543', '1992/03/21', '85740');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (19, 'Temple', 'Thurby', 'tthurbyi@merriam-webster.com', 'I1558892930', '1990/07/26', '86121');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (20, 'Alvera', 'Froment', 'afromentj@ycombinator.com', 'U1741880103', '1992/04/03', '85524');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (21, 'Ellary', 'Sandercroft', 'esandercroftk@bloglovin.com', 'E1373033391', '1990/12/24', '03954');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (22, 'Frannie', 'Favey', 'ffaveyl@trellian.com', 'S1153274511', '1996/11/09', '34288');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (23, 'Benson', 'Farenden', 'bfarendenm@state.gov', 'M1143825463', '1995/05/08', '31808');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (24, 'Gleda', 'Sivier', 'gsiviern@tiny.cc', 'C1286157088', '1996/08/02', '25237');
+insert into passenger (passengerID, fname, lname, email, drivers_license, date_of_birth, location) values (25, 'Tamiko', 'Rickford', 'trickfordo@blinklist.com', 'S1506591324', '2000/04/20', '42546');
+
+create table car (
+	carID INT NOT NULL,
+	brand VARCHAR(50),
+	licNO VARCHAR(50),
+	mfgyear VARCHAR(50),
+	color VARCHAR(50),
+	car_category VARCHAR(9),
+	car_model VARCHAR(50),
+	CONSTRAINT car_pk PRIMARY KEY(carID)
+);
+
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (1, 'Isuzu', 'C1635322', 2006, 'Khaki', 'hatchback', 'Ascender');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (2, 'BMW', 'C1739322', 2007, 'Aquamarine', 'SUV', 'M6');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (3, 'GMC', 'C1937372', 1999, 'Red', 'hatchback', 'Jimmy');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (4, 'Chevrolet', 'C1837382', 2003, 'Maroon', 'minivan', 'Silverado');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (5, 'Maybach', 'C1033382', 2011, 'Puce', 'sedan', 'Landaulet');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (6, 'Renault', 'A1734372', 1983, 'Goldenrod', 'hatchback', 'Alliance');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (7, 'Ford', 'A1736382', 1985, 'Yellow', 'SUV', 'F-Series');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (8, 'Mercedes-Benz', 'C1036342', 2000, 'Crimson', 'SUV', 'CLK-Class');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (9, 'Chevrolet', 'A1334312', 2010, 'Violet', 'hatchback', 'Malibu');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (10, 'Volvo', 'A1639342', 2006, 'Puce', 'sedan', 'S80');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (11, 'Pontiac', 'C1132382', 2006, 'Goldenrod', 'hatchback', 'GTO');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (12, 'Chevrolet', 'C1331312', 2011, 'Crimson', 'SUV', 'Express');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (13, 'Acura', 'C1533382', 1996, 'Goldenrod', 'sedan', 'TL');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (14, 'Lincoln', 'A1930312', 2000, 'Crimson', 'sedan', 'Continental');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (15, 'BMW', 'B1834332', 2005, 'Puce', 'minivan', '530');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (16, 'Audi', 'A1738302', 2012, 'Orange', 'hatchback', 'A4');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (17, 'Mazda', 'B1232342', 2006, 'Yellow', 'minivan', 'Tribute');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (18, 'Chevrolet', 'C1539322', 1996, 'Green', 'sedan', 'Impala');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (19, 'Ford', 'B1537312', 2009, 'Green', 'SUV', 'Explorer');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (20, 'Buick', 'C1937352', 1984, 'Aquamarine', 'SUV', 'Skyhawk');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (21, 'Chevrolet', 'B1038352', 2004, 'Mauv', 'minivan', 'Tahoe');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (22, 'Lexus', 'A1035372', 2005, 'Teal', 'sedan', 'ES');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (23, 'Ford', 'B1532362', 2008, 'Teal', 'hatchback', 'F450');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (24, 'Mazda', 'B1436392', 2003, 'Purple', 'SUV', 'MX-5');
+insert into car (carID, brand, licNO, mfgyear, color, car_category, car_model) values (25, 'Ford', 'A1436392', 1990, 'Red', 'hatchback', 'Probe');
