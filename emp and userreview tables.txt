@@ -1,0 +1,74 @@
+create table employee (
+	empID INT NOT NULL,
+	first_name VARCHAR(50),
+	emp_dob DATE CONSTRAINT chk_empdob CHECK (emp_dob > TO_DATE ('1950/01/01', 'YYYY/MM/DD')),
+	deptID INT,
+	PRIMARY KEY(empID),
+	FOREIGN KEY(deptID) REFERENCES emp_department(deptID)
+);
+
+insert into employee (empID, first_name, emp_dob, deptID) values (1, 'Lindsey Gotmann', '1980-12-16', 18);
+insert into employee (empID, first_name, emp_dob, deptID) values (2, 'Jesse Harteley', '1986-05-10', 6);
+insert into employee (empID, first_name, emp_dob, deptID) values (3, 'Gabey Raraty', '1999-09-08', 1);
+insert into employee (empID, first_name, emp_dob, deptID) values (4, 'Lothario Roston', '2013-03-14', 8);
+insert into employee (empID, first_name, emp_dob, deptID) values (5, 'Noelle Endean', '1987-08-08', 11);
+insert into employee (empID, first_name, emp_dob, deptID) values (6, 'Luise Paoli', '1984-02-07', 22);
+insert into employee (empID, first_name, emp_dob, deptID) values (7, 'Twyla Follis', '1987-04-11', 7);
+insert into employee (empID, first_name, emp_dob, deptID) values (8, 'Opalina Jeannot', '1980-05-30', 12);
+insert into employee (empID, first_name, emp_dob, deptID) values (9, 'Garreth Readitt', '1982-08-03', 19);
+insert into employee (empID, first_name, emp_dob, deptID) values (10, 'Bengt Windley', '2014-07-05', 4);
+insert into employee (empID, first_name, emp_dob, deptID) values (11, 'Emylee Ramelet', '1987-04-14', 9);
+insert into employee (empID, first_name, emp_dob, deptID) values (12, 'Pat Kelinge', '2009-01-15', 24);
+insert into employee (empID, first_name, emp_dob, deptID) values (13, 'Barbara Plumtree', '2010-11-29', 17);
+insert into employee (empID, first_name, emp_dob, deptID) values (14, 'Gilli Bracegirdle', '1986-03-31', 14);
+insert into employee (empID, first_name, emp_dob, deptID) values (15, 'Saree Masi', '2004-05-28', 5);
+insert into employee (empID, first_name, emp_dob, deptID) values (16, 'Dorian Tolland', '2010-10-01', 20);
+insert into employee (empID, first_name, emp_dob, deptID) values (17, 'Marybeth Kaesmakers', '2009-10-10', 2);
+insert into employee (empID, first_name, emp_dob, deptID) values (18, 'Tades Beernt', '1987-04-28', 21);
+insert into employee (empID, first_name, emp_dob, deptID) values (19, 'Teddy Pepler', '1999-07-15', 15);
+insert into employee (empID, first_name, emp_dob, deptID) values (20, 'Diane-marie Melvin', '1986-09-10', 23);
+insert into employee (empID, first_name, emp_dob, deptID) values (21, 'Brena Hayesman', '1993-10-03', 3);
+insert into employee (empID, first_name, emp_dob, deptID) values (22, 'Gray Maggiore', '2009-07-13', 13);
+insert into employee (empID, first_name, emp_dob, deptID) values (23, 'Fabian Molines', '2006-07-03', 16);
+insert into employee (empID, first_name, emp_dob, deptID) values (24, 'Tyson Arrighi', '1998-04-09', 10);
+insert into employee (empID, first_name, emp_dob, deptID) values (25, 'Terrance Shillito', '1986-05-09', 25);
+
+
+
+create table user_review (
+	reviewID INT NOT NULL,
+	rating_in_stars INT CONSTRAINT t_rating CHECK (rating_in_stars IN (1, 2, 3, 4, 5)),
+	car_model_rating_in_stars INT CONSTRAINT c_rating CHECK (car_model_rating_in_stars IN (1, 2, 3, 4, 5)),
+	reservationID INT,
+	carID INT,
+    PRIMARY KEY (reviewID),
+    foreign key (carID) references car(carID)
+);
+
+
+
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (1, 4, 3, 1, 16);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (2, 1, 3, 2, 20);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (3, 5, 1, 3, 14);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (4, 2, 5, 4, 18);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (5, 2, 4, 5, 15);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (6, 4, 3, 6, 19);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (7, 4, 1, 7, 24);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (8, 3, 2, 8, 1);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (9, 4, 4, 9, 12);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (10, 5, 5, 10, 11);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (11, 2, 3, 11, 4);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (12, 5, 2, 12, 1);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (13, 5, 1, 13, 5);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (14, 5, 5, 14, 9);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (15, 5, 1, 15, 9);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (16, 1, 4, 16, 22);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (17, 3, 1, 17, 17);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (18, 5, 5, 18, 7);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (19, 4, 5, 19, 12);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (20, 2, 4, 20, 19);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (21, 4, 3, 21, 15);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (22, 1, 3, 22, 1);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (23, 3, 4, 23, 9);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (24, 1, 4, 24, 4);
+insert into user_review (reviewID, rating_in_stars, car_model_rating_in_stars, reservationID, carID) values (25, 1, 3, 25, 25);
