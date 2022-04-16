@@ -1,0 +1,71 @@
+create table tr_transaction (
+	transactionID INT NOT NULL,
+	trip_amount VARCHAR(3),
+	trip_invoice VARCHAR(50),
+	transaction_date DATE,
+	status VARCHAR(9) CONSTRAINT st CHECK (status in ('COMPLETED', 'FAILED')),
+	payment_type VARCHAR(6),
+    reservationID INT,
+	CONSTRAINT tx_pk PRIMARY KEY(transactionID),
+    CONSTRAINT rsv_fk FOREIGN KEY (reservationID) REFERENCES reservation(reservationID)
+);
+
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (1, 210, 'L57302', '2022-01-24', 'COMPLETED', 'Credit', 1);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (2, 70, 'Q59352', '2021-02-28', 'COMPLETED', 'Debit', 2);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (3, 70, 'E56382', '2021-04-13', 'FAILED', 'Credit', 3);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (4, 175, 'K50362', '2021-06-13', 'COMPLETED', 'Credit', 4);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (5, 110, 'G56392', '2021-03-06', 'COMPLETED', 'Debit', 5);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (6, 50, 'T50382', '2021-05-31', 'FAILED', 'Credit', 6);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (7, 75, 'K55312', '2021-09-11', 'COMPLETED', 'Debit', 7);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (8, 350, 'F57392', '2021-04-19', 'FAILED', 'Credit', 8);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (9, 115, 'Q56352', '2021-06-28', 'COMPLETED', 'Debit', 9);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (10, 125, 'U51382', '2021-06-06', 'COMPLETED', 'Debit', 10);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (11, 335, 'I53342', '2021-09-24', 'COMPLETED', 'Credit', 11);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (12, 175, 'Q51332', '2021-04-13', 'COMPLETED', 'Debit', 12);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (13, 110, 'I52322', '2021-05-11', 'COMPLETED', 'Credit', 13);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (14, 110, 'N59322', '2021-09-11', 'FAILED', 'Credit', 14);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (15, 165, 'Z54362', '2021-08-25', 'COMPLETED', 'Debit', 15);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (16, 165, 'G50302', '2022-03-07', 'COMPLETED', 'Debit', 16);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (17, 70, 'N58372', '2021-04-23', 'COMPLETED', 'Credit', 17);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (18, 125, 'G57362', '2021-08-25', 'COMPLETED', 'Credit', 18);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (19, 210, 'C58302', '2021-05-23', 'COMPLETED', 'Credit', 19);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (20, 125, 'H56322', '2022-02-14', 'COMPLETED', 'Debit', 20);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (21, 115, 'F57352', '2021-06-14', 'COMPLETED', 'Credit', 21);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (22, 110, 'N51302', '2021-06-26', 'FAILED', 'Debit', 22);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (23, 115, 'T56312', '2021-11-08', 'COMPLETED', 'Credit', 23);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (24, 50, 'P57392', '2021-09-24', 'COMPLETED', 'Credit', 24);
+insert into tr_transaction (transactionID, trip_amount, trip_invoice, transaction_date, status, payment_type, reservationID) values (25, 110, 'H57382', '2021-02-20', 'FAILED', 'Credit', 25);
+
+
+
+create table emp_department (
+	deptID INT NOT NULL,
+	dept_name VARCHAR(50),
+	CONSTRAINT empdpt_pk PRIMARY KEY(deptID)
+);
+
+insert into emp_department (deptID, dept_name) values (1, 'Training');
+insert into emp_department (deptID, dept_name) values (2, 'Support');
+insert into emp_department (deptID, dept_name) values (3, 'Support');
+insert into emp_department (deptID, dept_name) values (4, 'Product Management');
+insert into emp_department (deptID, dept_name) values (5, 'Training');
+insert into emp_department (deptID, dept_name) values (6, 'Engineering');
+insert into emp_department (deptID, dept_name) values (7, 'Sales');
+insert into emp_department (deptID, dept_name) values (8, 'Product Management');
+insert into emp_department (deptID, dept_name) values (9, 'Services');
+insert into emp_department (deptID, dept_name) values (10, 'Marketing');
+insert into emp_department (deptID, dept_name) values (11, 'Engineering');
+insert into emp_department (deptID, dept_name) values (12, 'Support');
+insert into emp_department (deptID, dept_name) values (13, 'Research and Development');
+insert into emp_department (deptID, dept_name) values (14, 'Business Development');
+insert into emp_department (deptID, dept_name) values (15, 'Business Development');
+insert into emp_department (deptID, dept_name) values (16, 'Sales');
+insert into emp_department (deptID, dept_name) values (17, 'Business Development');
+insert into emp_department (deptID, dept_name) values (18, 'Research and Development');
+insert into emp_department (deptID, dept_name) values (19, 'Marketing');
+insert into emp_department (deptID, dept_name) values (20, 'Accounting');
+insert into emp_department (deptID, dept_name) values (21, 'Accounting');
+insert into emp_department (deptID, dept_name) values (22, 'Engineering');
+insert into emp_department (deptID, dept_name) values (23, 'Legal');
+insert into emp_department (deptID, dept_name) values (24, 'Accounting');
+insert into emp_department (deptID, dept_name) values (25, 'Legal');
