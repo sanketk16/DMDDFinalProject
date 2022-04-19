@@ -1,0 +1,57 @@
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "RENTALS_IN_A_LOCATION"
+AS 
+select location, count(parking_lot.carID)AS cars_rented_count
+from parking_lot
+join car on parking_lot.carID = car.carID
+join reservation on reservation.carID = car.carID
+group by location;
+
+SELECT * FROM RENTALS_IN_A_LOCATION;
+
+
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "SUV_RENTED_PASSENGERS" 
+AS 
+SELECT 
+passenger.fname, passenger.lname
+FROM 
+passenger join reservation
+on passenger.passengerID = reservation.passengerID
+join car on reservation.carID = car.carID
+where car.car_category = 'SUV';
+
+SELECT * FROM SUV_RENTED_PASSENGERS;
+
+
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "TICKETS_PER_ISSUE_CATEGORY" 
+AS 
+select issue_category.category_name as IssueCategory,
+count(customer_support.ticketNO) as NoOfTickets
+from customer_support
+join issue_category on issue_category.categoryID = customer_support.categoryID
+group by issue_category.category_name;
+
+SELECT * FROM TICKETS_PER_ISSUE_CATEGORY;
+
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "TOP_3_EMPLOYEES" 
+AS 
+select employee.empID, count(ticketNO) as ticketsSolved
+from employee
+join customer_support on employee.empID = customer_support.empID
+where customer_support.ticketStatus = 'RESOLVED'
+group by employee.empID
+order by ticketsSolved desc
+fetch first 3 rows only;
+
+SELECT * FROM TOP_3_EMPLOYEES;
+
+
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "SERVICE_USED_IN_DAYS"
+AS 
+select 
+passenger.passengerID as PassengerID,
+passenger.fname as Name,
+(trunc(reservation.return_date) - trunc(reservation.pickup_date)) as ServiceUsedinDays
+from passenger
+join reservation on passenger.passengerID = reservation.reservationID;
+
+SELECT * FROM SERVICE_USED_IN_DAYS;
