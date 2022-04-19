@@ -9,17 +9,17 @@ group by location;
 SELECT * FROM RENTALS_IN_A_LOCATION;
 
 
-CREATE OR REPLACE FORCE EDITIONABLE VIEW "SUV_RENTED_PASSENGERS" 
-AS 
-SELECT 
-passenger.fname, passenger.lname
-FROM 
-passenger join reservation
-on passenger.passengerID = reservation.passengerID
-join car on reservation.carID = car.carID
-where car.car_category = 'SUV';
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "AVG_RATING_PER_MODEL"
+AS
+select car.car_model as Model, 
+car.car_category as category, 
+round(avg(user_review.car_model_rating_in_stars), 2) as AvgRatingByUsers
+from car
+join user_review on user_review.carID = car.carID
+group by car.car_model, car.car_category
+order by AvgRatingByUsers desc;
 
-SELECT * FROM SUV_RENTED_PASSENGERS;
+SELECT * FROM AVG_RATING_PER_MODEL;
 
 
 CREATE OR REPLACE FORCE EDITIONABLE VIEW "TICKETS_PER_ISSUE_CATEGORY" 
