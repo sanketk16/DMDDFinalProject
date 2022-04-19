@@ -1,0 +1,22 @@
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "HIGHEST_RATED_MODEL_PER_CATEGORY"
+AS 
+select car_category as Category,
+car_model as Highest_rated_Model,
+car_model_rating_in_stars as Rating
+from car
+join user_review
+on car.carID = user_review.carID
+WHERE user_review.car_model_rating_in_stars = 5;
+
+SELECT * FROM HIGHEST_RATED_MODEL_PER_CATEGORY;
+
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "PER_TRIP_DURATION_IN_DAYS"
+AS
+select reservation.reservationID as TripID,
+passenger.passengerID as passengerID,
+CONCAT (CONCAT (passenger.fname, ' '), passenger.lname) AS PassengerName,
+(trunc(reservation.return_date) - trunc(reservation.pickup_date)) as TripDurationInDays
+from passenger
+join reservation on passenger.passengerID = reservation.carID;
+
+SELECT * FROM PER_TRIP_DURATION_IN_DAYS;
