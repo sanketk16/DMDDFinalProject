@@ -1,0 +1,19 @@
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "CARS_BY_CATEGORY"
+AS 
+select car.car_category as Category,
+count(*) as CountOfCars
+from car
+group by car_category;
+
+SELECT * FROM CARS_BY_CATEGORY;
+
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "NO_OF_RENTAL_DAYS" 
+AS 
+select car.car_model as Model,
+car.car_category as Category,
+sum(trunc(reservation.return_date) - trunc(reservation.pickup_date)) as Total_Rented_Days_By_This_Model
+from car
+join reservation on car.carID = reservation.carID
+group by car.car_model, car.car_category;
+
+SELECT * FROM NO_OF_RENTAL_DAYS;
