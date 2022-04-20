@@ -1,0 +1,10 @@
+CREATE OR REPLACE FORCE EDITIONABLE VIEW "HIGHEST_RATED_MODEL_ZIPCODE"
+AS 
+select location AS Area, car_model as Highest_Rated_model, car_category as category
+from parking_lot 
+join car
+on parking_lot.carID = car.carID 
+join user_review on user_review.carID = car.carID
+where user_review.car_model_rating_in_stars = 5;
+
+SELECT * FROM HIGHEST_RATED_MODEL_ZIPCODE;
