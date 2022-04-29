@@ -1,0 +1,31 @@
+cREATE OR REPLACE FUNCTION fn_findnearbyvacantslot (curr_loc NUMBER)
+	RETURN VARCHAR2  
+	IS
+	lot_name VARCHAR2 (50);
+	lcn VARCHAR2 (50);
+	min_zip_dist NUMBER;
+	BEGIN
+        
+         SELECT lotname INTO lot_name
+         FROM parking_lot
+         WHERE current_status = 'VACANT'
+         --ORDER BY 1 ASC
+         ORDER BY (ABS (curr_loc - location) ) ASC
+         FETCH FIRST 1 ROWS ONLY;
+         
+         SELECT location INTO lcn
+         FROM parking_lot
+         WHERE current_status = 'VACANT'
+         --ORDER BY 1 ASC
+         ORDER BY (ABS (curr_loc - location) ) ASC
+         FETCH FIRST 1 ROWS ONLY;
+         
+        --DBMS_OUTPUT.PUT_LINE ('The lot ' || lot_name || ' at location ' || lcn || ' is the closest vacant lot from your location');
+        RETURN lcn;
+        
+	EXCEPTION
+        WHEN NO_DATA_FOUND
+        THEN RETURN 'No vacant locations available';
+
+
+	END FN_FINDNEARBYVACANTSLOT;
